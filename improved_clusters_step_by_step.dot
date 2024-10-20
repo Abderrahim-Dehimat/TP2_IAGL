@@ -1,0 +1,81 @@
+digraph Clusters {
+  node [shape=ellipse];
+  // Step 0: Initial Clusters
+  "behavioral.visitor.TaxVisitor" [label="behavioral.visitor.TaxVisitor", color=blue];
+  "behavioral.visitor.Test" [label="behavioral.visitor.Test", color=blue];
+  "behavioral.visitor.Necessity" [label="behavioral.visitor.Necessity", color=blue];
+  "behavioral.visitor.Liquor" [label="behavioral.visitor.Liquor", color=blue];
+  "behavioral.visitor.TaxHolidayVisitor" [label="behavioral.visitor.TaxHolidayVisitor", color=blue];
+  "behavioral.visitor.Tobacco" [label="behavioral.visitor.Tobacco", color=blue];
+  "behavioral.visitor.Product" [label="behavioral.visitor.Product", color=blue];
+
+  // Step 1: Merge behavioral.visitor.Test and java.lang.String
+  "behavioral.visitor.Test:java.lang.String" [label="behavioral.visitor.Test:java.lang.String", style=filled, color=lightgrey];
+  "behavioral.visitor.Test" -> "behavioral.visitor.Test:java.lang.String" [label="Merge"];
+  "java.lang.String" -> "behavioral.visitor.Test:java.lang.String" [label="Merge"];
+
+  // Step 2: Merge behavioral.visitor.Test:java.lang.String and behavioral.visitor.Product
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product" [label="behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product", style=filled, color=lightgrey];
+  "behavioral.visitor.Test:java.lang.String" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product" [label="Merge"];
+  "behavioral.visitor.Product" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product" [label="Merge"];
+
+  // Step 3: Merge behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product and java.util.List
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List" [label="behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List", style=filled, color=lightgrey];
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List" [label="Merge"];
+  "java.util.List" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List" [label="Merge"];
+
+  // Step 4: Merge behavioral.visitor.TaxVisitor and java.lang.Override
+  "behavioral.visitor.TaxVisitor:java.lang.Override" [label="behavioral.visitor.TaxVisitor:java.lang.Override", style=filled, color=lightgrey];
+  "behavioral.visitor.TaxVisitor" -> "behavioral.visitor.TaxVisitor:java.lang.Override" [label="Merge"];
+  "java.lang.Override" -> "behavioral.visitor.TaxVisitor:java.lang.Override" [label="Merge"];
+
+  // Step 5: Merge behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List and java.io.PrintStream
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream" [label="behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream", style=filled, color=lightgrey];
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream" [label="Merge"];
+  "java.io.PrintStream" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream" [label="Merge"];
+
+  // Step 6: Merge behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream and java.lang.System
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System" [label="behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System", style=filled, color=lightgrey];
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System" [label="Merge"];
+  "java.lang.System" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System" [label="Merge"];
+
+  // Step 7: Merge behavioral.visitor.Necessity and behavioral.visitor.Visitor
+  "behavioral.visitor.Necessity:behavioral.visitor.Visitor" [label="behavioral.visitor.Necessity:behavioral.visitor.Visitor", style=filled, color=lightgrey];
+  "behavioral.visitor.Necessity" -> "behavioral.visitor.Necessity:behavioral.visitor.Visitor" [label="Merge"];
+  "behavioral.visitor.Visitor" -> "behavioral.visitor.Necessity:behavioral.visitor.Visitor" [label="Merge"];
+
+  // Step 8: Merge behavioral.visitor.TaxHolidayVisitor and behavioral.visitor.Liquor
+  "behavioral.visitor.TaxHolidayVisitor:behavioral.visitor.Liquor" [label="behavioral.visitor.TaxHolidayVisitor:behavioral.visitor.Liquor", style=filled, color=lightgrey];
+  "behavioral.visitor.TaxHolidayVisitor" -> "behavioral.visitor.TaxHolidayVisitor:behavioral.visitor.Liquor" [label="Merge"];
+  "behavioral.visitor.Liquor" -> "behavioral.visitor.TaxHolidayVisitor:behavioral.visitor.Liquor" [label="Merge"];
+
+  // Step 9: Merge behavioral.visitor.TaxVisitor:java.lang.Override and behavioral.visitor.Tobacco
+  "behavioral.visitor.TaxVisitor:java.lang.Override:behavioral.visitor.Tobacco" [label="behavioral.visitor.TaxVisitor:java.lang.Override:behavioral.visitor.Tobacco", style=filled, color=lightgrey];
+  "behavioral.visitor.TaxVisitor:java.lang.Override" -> "behavioral.visitor.TaxVisitor:java.lang.Override:behavioral.visitor.Tobacco" [label="Merge"];
+  "behavioral.visitor.Tobacco" -> "behavioral.visitor.TaxVisitor:java.lang.Override:behavioral.visitor.Tobacco" [label="Merge"];
+
+  // Step 10: Merge behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System and java.util.Arrays
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays" [label="behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays", style=filled, color=lightgrey];
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays" [label="Merge"];
+  "java.util.Arrays" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays" [label="Merge"];
+
+  // Step 11: Merge behavioral.visitor.TaxVisitor:java.lang.Override:behavioral.visitor.Tobacco and java.lang.Class
+  "behavioral.visitor.TaxVisitor:java.lang.Override:behavioral.visitor.Tobacco:java.lang.Class" [label="behavioral.visitor.TaxVisitor:java.lang.Override:behavioral.visitor.Tobacco:java.lang.Class", style=filled, color=lightgrey];
+  "behavioral.visitor.TaxVisitor:java.lang.Override:behavioral.visitor.Tobacco" -> "behavioral.visitor.TaxVisitor:java.lang.Override:behavioral.visitor.Tobacco:java.lang.Class" [label="Merge"];
+  "java.lang.Class" -> "behavioral.visitor.TaxVisitor:java.lang.Override:behavioral.visitor.Tobacco:java.lang.Class" [label="Merge"];
+
+  // Step 12: Merge behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays and java.lang.Object[]
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]" [label="behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]", style=filled, color=lightgrey];
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]" [label="Merge"];
+  "java.lang.Object[]" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]" [label="Merge"];
+
+  // Step 13: Merge behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[] and java.lang.String[]
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]:java.lang.String[]" [label="behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]:java.lang.String[]", style=filled, color=lightgrey];
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]:java.lang.String[]" [label="Merge"];
+  "java.lang.String[]" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]:java.lang.String[]" [label="Merge"];
+
+  // Step 14: Merge behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]:java.lang.String[] and behavioral.visitor.Visitable
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]:java.lang.String[]:behavioral.visitor.Visitable" [label="behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]:java.lang.String[]:behavioral.visitor.Visitable", style=filled, color=lightgrey];
+  "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]:java.lang.String[]" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]:java.lang.String[]:behavioral.visitor.Visitable" [label="Merge"];
+  "behavioral.visitor.Visitable" -> "behavioral.visitor.Test:java.lang.String:behavioral.visitor.Product:java.util.List:java.io.PrintStream:java.lang.System:java.util.Arrays:java.lang.Object[]:java.lang.String[]:behavioral.visitor.Visitable" [label="Merge"];
+}

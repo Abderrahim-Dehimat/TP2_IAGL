@@ -1,0 +1,22 @@
+digraph CallGraph {
+"Test : main" -> "Necessity : constructor";
+"Test : main" -> "Liquor : constructor";
+"Test : main" -> "Tobacco : constructor";
+"Test : main" -> "TaxVisitor : constructor";
+"Test : main" -> "Test : computeTaxForProducts";
+"Test : main" -> "TaxHolidayVisitor : constructor";
+"Test : main" -> "Test : computeTaxForProducts";
+"Test : computeTaxForProducts" -> "Tobacco : accept";
+"Test : computeTaxForProducts" -> "TaxVisitor : getComputedTax";
+"Tobacco : accept" -> "TaxVisitor : visit";
+"TaxHolidayVisitor : visit" -> "TaxVisitor : computeTax";
+"TaxHolidayVisitor : visit" -> "TaxVisitor : computeTax";
+"Product : constructor" -> "Product : setName";
+"Product : constructor" -> "Product : setPrice";
+"Necessity : accept" -> "TaxVisitor : visit";
+"TaxVisitor : computeTax" -> "Product : getPrice";
+"TaxVisitor : visit" -> "TaxVisitor : computeTax";
+"TaxVisitor : visit" -> "TaxVisitor : computeTax";
+"TaxVisitor : visit" -> "TaxVisitor : computeTax";
+"Liquor : accept" -> "TaxVisitor : visit";
+}

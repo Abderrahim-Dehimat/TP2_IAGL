@@ -1,0 +1,15 @@
+digraph CouplingGraph {
+"Tobacco" -> "TaxVisitor" [label="Couplage: 0,05"];
+"TaxHolidayVisitor" -> "TaxVisitor" [label="Couplage: 0,1"];
+"Test" -> "Tobacco" [label="Couplage: 0,1"];
+"Test" -> "TaxHolidayVisitor" [label="Couplage: 0,05"];
+"Test" -> "Test" [label="Couplage: 0,1"];
+"Test" -> "Necessity" [label="Couplage: 0,05"];
+"Test" -> "Liquor" [label="Couplage: 0,05"];
+"Test" -> "TaxVisitor" [label="Couplage: 0,1"];
+"Necessity" -> "TaxVisitor" [label="Couplage: 0,05"];
+"Product" -> "Product" [label="Couplage: 0,1"];
+"Liquor" -> "TaxVisitor" [label="Couplage: 0,05"];
+"TaxVisitor" -> "Product" [label="Couplage: 0,05"];
+"TaxVisitor" -> "TaxVisitor" [label="Couplage: 0,15"];
+}

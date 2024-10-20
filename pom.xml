@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.tp</groupId>
+  <artifactId>tpAnalyser</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+
+    <!-- Dépendance pour JavaParser -->
+
+    <dependency>
+
+      <groupId>com.github.javaparser</groupId>
+
+      <artifactId>javaparser-core</artifactId>
+
+      <version>3.25.4</version>
+
+    </dependency>
+
+    
+
+    <!-- JavaParser Symbol Solver dependency -->
+
+    <dependency>
+
+        <groupId>com.github.javaparser</groupId>
+
+        <artifactId>javaparser-symbol-solver-core</artifactId>
+
+        <version>3.25.2</version>
+
+    </dependency>
+
+
+
+    <!-- JUnit pour les tests -->
+
+    <dependency>
+
+      <groupId>junit</groupId>
+
+      <artifactId>junit</artifactId>
+
+      <version>4.13.2</version>
+
+      <scope>test</scope>
+
+    </dependency>
+
+
+
+    <!-- JavaFX Dependencies -->
+
+    <dependency>
+
+    <groupId>org.openjfx</groupId>
+
+    <artifactId>javafx-controls</artifactId>
+
+    <version>17.0.1</version> <!-- Use the version you need -->
+
+	</dependency>
+
+	<dependency>
+
+	    <groupId>org.openjfx</groupId>
+
+	    <artifactId>javafx-fxml</artifactId>
+
+	    <version>17.0.1</version>
+
+	</dependency>
+
+
+
+   
+
+   <!-- Graphviz Dependencies pour la visualisation-->
+
+    <dependency>
+
+        <groupId>guru.nidi</groupId>
+
+        <artifactId>graphviz-java</artifactId>
+
+        <version>0.18.1</version>
+
+    </dependency>
+    
+        
+    <!-- Spoon for code analysis -->
+    <dependency>
+        <groupId>fr.inria.gforge.spoon</groupId>
+        <artifactId>spoon-core</artifactId>
+        <version>10.3.0</version>
+    </dependency>
+
+    <!-- GraphStream for graph visualization -->
+    <dependency>
+        <groupId>org.graphstream</groupId>
+        <artifactId>gs-core</artifactId>
+        <version>1.3</version>
+    </dependency>
+
+    <!-- Apache Commons Math3 for clustering algorithms -->
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-math3</artifactId>
+        <version>3.6.1</version>
+    </dependency>
+
+    <!-- SLF4J Simple for logging -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.32</version> <!-- You can use the latest version -->
+    </dependency>
+
+	<!-- dependecies for JGraphT-->
+	<dependency>
+	    <groupId>org.jgrapht</groupId>
+	    <artifactId>jgrapht-core</artifactId>
+	    <version>1.5.1</version>
+	</dependency>
+
+  </dependencies>
+  
+</project>

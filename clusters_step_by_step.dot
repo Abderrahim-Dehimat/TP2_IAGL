@@ -1,0 +1,36 @@
+digraph Clusters {
+  node [shape=ellipse];
+  // Étape 0 : Clusters initiaux
+  "Tobacco" [label="Tobacco", color=blue];
+  "TaxHolidayVisitor" [label="TaxHolidayVisitor", color=blue];
+  "Test" [label="Test", color=blue];
+  "Necessity" [label="Necessity", color=blue];
+  "Product" [label="Product", color=blue];
+  "Liquor" [label="Liquor", color=blue];
+  "TaxVisitor" [label="TaxVisitor", color=blue];
+
+  // Étape 1: Fusion de TaxHolidayVisitor et TaxVisitor
+  "TaxHolidayVisitor:TaxVisitor" [label="TaxHolidayVisitor:TaxVisitor", style=filled, color=lightgrey];
+  "TaxHolidayVisitor" -> "TaxHolidayVisitor:TaxVisitor" [label="Fusion"];
+  "TaxVisitor" -> "TaxHolidayVisitor:TaxVisitor" [label="Fusion"];
+
+  // Étape 2: Fusion de Test et Tobacco
+  "Test:Tobacco" [label="Test:Tobacco", style=filled, color=lightgrey];
+  "Test" -> "Test:Tobacco" [label="Fusion"];
+  "Tobacco" -> "Test:Tobacco" [label="Fusion"];
+
+  // Étape 3: Fusion de TaxHolidayVisitor:TaxVisitor et Product
+  "TaxHolidayVisitor:TaxVisitor:Product" [label="TaxHolidayVisitor:TaxVisitor:Product", style=filled, color=lightgrey];
+  "TaxHolidayVisitor:TaxVisitor" -> "TaxHolidayVisitor:TaxVisitor:Product" [label="Fusion"];
+  "Product" -> "TaxHolidayVisitor:TaxVisitor:Product" [label="Fusion"];
+
+  // Étape 4: Fusion de Test:Tobacco et Necessity
+  "Test:Tobacco:Necessity" [label="Test:Tobacco:Necessity", style=filled, color=lightgrey];
+  "Test:Tobacco" -> "Test:Tobacco:Necessity" [label="Fusion"];
+  "Necessity" -> "Test:Tobacco:Necessity" [label="Fusion"];
+
+  // Étape 5: Fusion de Test:Tobacco:Necessity et Liquor
+  "Test:Tobacco:Necessity:Liquor" [label="Test:Tobacco:Necessity:Liquor", style=filled, color=lightgrey];
+  "Test:Tobacco:Necessity" -> "Test:Tobacco:Necessity:Liquor" [label="Fusion"];
+  "Liquor" -> "Test:Tobacco:Necessity:Liquor" [label="Fusion"];
+}
